@@ -1,16 +1,23 @@
-<h1>餐廳後台</h1>
-<ul>
-  <% @restaurants.each do |restaurant| %>
-    <li>
-      <%= restaurant.name %>
-    
-        <%= link_to 'Show', admin_restaurant_path(restaurant) %>
-        <%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %>
-        <%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"} %>
-    </li> 
-
+<div class="container">
+    <h1>餐廳後台</h1> 
+  <table class="table table-striped">
+        <tr> 
+          <th>name</th>  
+          <th>show</th> 
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
+    <tr><% @restaurants.each do |restaurant| %>
+      <td><%= restaurant.name %></td> 
+      <td><%= link_to 'Show', admin_restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Edit', edit_admin_restaurant_path(restaurant) %></td>
+      <td><%= link_to 'Delete', admin_restaurant_path(restaurant), method: :delete, data: {confirm:"Are you sure?"} %></td>
+    </tr>
+    </tbody>
     <% end %>
 </ul>
+  </table>
+</div>
 <%= paginate @restaurants %>
 <br>
 <%= link_to 'New Restaurant', new_admin_restaurant_path %>
