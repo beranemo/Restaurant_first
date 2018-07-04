@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 #user authentication
 gem 'devise'
 gem 'carrierwave'
+gem 'ffaker'
 
 
 group :development, :test do
