@@ -9,4 +9,6 @@ Rails.application.routes.draw do
     resources :categories
     root "restaurants#index"
   end
+
+  resources :categories, only: :show
 end
