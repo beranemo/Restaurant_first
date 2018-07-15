@@ -23,7 +23,6 @@ class Admin::CategoriesController < Admin::BaseController
     end
 
     def update
-        set_category 
         if @category.update(category_params)
           redirect_to admin_categories_path
           flash[:notice] = "category was successfully updated"
@@ -34,7 +33,6 @@ class Admin::CategoriesController < Admin::BaseController
     end
 
     def destroy
-        set_category 
         @category.destroy
         flash[:alert] = "category was successfully deleted"
         redirect_to admin_categories_path
