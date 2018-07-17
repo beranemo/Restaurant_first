@@ -9,8 +9,9 @@ class User < ApplicationRecord
   end
 
   mount_uploader :avatar, AvatarUploader
-  
+
   has_many :contents
+  has_many :restaurants, through: :contents
   
 
 end

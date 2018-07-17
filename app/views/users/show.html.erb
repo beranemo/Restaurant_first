@@ -22,7 +22,26 @@
           <div class="clearfix"></div>
 
         </div>
-
+        <!-- 評論區 -->
+        <div class="panel panel-default">
+          <div class="panel-ehading">
+          <h3 class="panel-title"><strong><%= @contented_restaurants.count %></strong>已評論餐廳</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <% @contented_restaurants.each do |restaurant| %>
+          <%= link_to restaurant_path(restaurant) do %>
+        <div class="my-restaurant">
+          <div>
+              <%= image_tag restaurant.image,class: "img-responsive img-rounded" %>
+          </div>
+          
+        </div>
+          <h5><%= restaurant.name %></h5>
+        </div>
+        
+          <% end %>
+        <% end %>
         <br>
     </div>
   </div>
